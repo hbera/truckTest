@@ -1,0 +1,46 @@
+motoristas
+- id
+- nome
+- idade (derivado)
+- sexo
+- cnh 
+- categorias cnh
+
+frete
+- origem 
+- destino
+- latOrigem
+- longOrigem
+- latDestino
+- longDestino
+
+veiculo
+- marca
+- modelo
+- tipoCaminhão
+- tipoVeiculo (próprio - alugado)
+- placa
+
+tipo veiculo
+- codigo
+- descricao
+
+tipo caminhão
+- codigo
+- descricao
+
+
+relacionamentos
+- veiculo <-> tipo veiculo 1..n
+- veiculo <-> tipo caminhão 1..n
+- viagem 1..1..n (motorista - veiculo - frete)
+    - frete
+    - veiculo
+    - motorista
+        - propriedade do relacionamento
+            - com carga/sem carga
+            - situação
+            - data
+
+- veiculo <-> motorista n..1
+
