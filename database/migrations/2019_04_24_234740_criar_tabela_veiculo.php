@@ -15,16 +15,17 @@ class CriarTabelaVeiculo extends Migration
     {
         Schema::create('veiculo', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string("fabricante", 20);
+            $table->string("fabricante", 60);
             $table->string("modelo", 25);
             $table->string("placa", 10);
-            $table->string("tipo_caminhao")->unsigned();
+            $table->integer("tipo_caminhao")->unsigned();
             $table->integer("tipo_veiculo")->unsigned();
+            $table->bigInteger("proprietario")->unsigned();
             $table->timestamps();
         });
 
         Schema::table(
-            'veiculo', function ($table){
+            'veiculo', function (Blueprint $table){
                 $table
                     ->foreign("tipo_caminhao")
                     ->references("id")
@@ -34,6 +35,11 @@ class CriarTabelaVeiculo extends Migration
                     ->foreign("tipo_veiculo")
                     ->references("id")
                     ->on("tipo_veiculo")
+                    ->onUpdate("cascade");
+                $table
+                    ->foreign("proprietario")
+                    ->references("id")
+                    ->on("motorista")
                     ->onUpdate("cascade");
             }
         );

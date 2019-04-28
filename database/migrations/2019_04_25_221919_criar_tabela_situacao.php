@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CriarTabelaTipoCaminhao extends Migration
+class CriarTabelaSituacao extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CriarTabelaTipoCaminhao extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_caminhao', function (Blueprint $table) {
+        Schema::create('situacao', function (Blueprint $table) {
             $table->increments('id');
-            $table->string("descricao", 15);
+            $table->string("descricao", 20);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CriarTabelaTipoCaminhao extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_caminhao');
+        Schema::dropIfExists('situacao');
     }
 }
