@@ -26,3 +26,14 @@ php artisan migrate
 php artisan db:seed
 
 php artisan serve
+
+
+Endpoints
+
+GET /motorista/comVeiculoProprio
+
+PUT /notorista/atualizar/{id}
+
+POST /motorista
+
+
