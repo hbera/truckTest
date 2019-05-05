@@ -27,5 +27,5 @@ class Veiculo extends Model
     public function motorista()
     {
         return $this->belongsTo(Motorista::class, "proprietario");
-    }
+    }   
 }

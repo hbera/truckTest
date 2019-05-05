@@ -14,3 +14,18 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->post("/motorista", [
+    'as' => "motorista.create",
+    'uses' => "MotoristaController@criarNovo"
+]);
+
+$router->get("/motorista/veiculoProprio", [
+    "as" => "motorista.veiculoProprio",
+    "uses" => "MotoristaController@comVeiculoProprio"
+]);
+
+$router->put('/motorista/atualizar/{id}',[
+    "as" => "motorista.atualizar",
+    "uses" => "MotoristaController@ataulizarRegistro"
+]);
